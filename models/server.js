@@ -16,14 +16,14 @@ class Server {
   rutas() {
     this.app.use('/api/peliculas', require('../routes/peliculas'))
     this.app.use('/api/empleados', require('../routes/empleados'))
-    this.app.use('*', (req, res) => {
-      res.status(404).send('Page not found')
-    })  
+    //this.app.use('*', (req, res) => {
+    //  res.status(404).send('Page not found')
+    //})  
   }
 
   listen() {
     this.app.listen(this.port, () => {
-      console.log(`La API esta escuchando en el this.PORT ${this.port}`)
+      console.log(`La API esta escuchando en el PORT ${this.port}`)
     })
   }
 }
